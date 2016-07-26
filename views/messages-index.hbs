@@ -1,0 +1,16 @@
+<h2>{{messages.length}} messages</h2>
+{{#each messages as |message index|}}
+<h3>
+  <a href="/messages/{{message.name}}">{{message.name}} : {{message.body}}</a>
+</h3>
+{{/each}}
+
+
+<h4> Type in the message you want to encode </h4>
+
+
+<form action="/messages" method="post">
+  <input type="text" name="message[name]" placeholder="Name" />
+  <input type="text" name="message[body]" placeholder="Message" />
+  <button type="submit"> Encode your message </button>
+</form>
